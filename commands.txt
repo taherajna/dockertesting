@@ -1,0 +1,9 @@
+Run RabbitMQ: docker run --hostname my-rabbit -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 25672:25672 -p 15672:15672 -p 15671:15671 --name rabbit -d rabbitmq:management
+
+Run mysql: docker run --name mysql -v -p 3306:3306 /user/taherajna/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -d mysql
+
+
+
+Windows nano: docker pull mcr.microsoft.com/windows/nanoserver:1809
+
+Windows server:  docker pull mcr.microsoft.com/windows/servercore:ltsc2019

@@ -1,0 +1,14 @@
+FROM mcr.microsoft.com/windows/nanoserver:1809
+
+CMD [ "mkdir", "C:/JDK_8u181"]
+
+COPY jdk-8u181-windows-x64.exe C:/JDK_8u181/jdk-8u181-windows-x64.exe
+COPY jdk_install.properties C:/JDK_8u181/jdk_install.properties
+CMD [ "C:/JDK_8u181/jdk-8u181-windows-x64.exe", "INSTALLCFG=C:/JDK_8u181/jdk_install.properties"]
+
+CMD [ "C:/JDK_8u181/bin/java.exe", "-version"]
+ENV JAVA_HOME "C:/JDK_8u181/"
+CMD echo %JAVA_HOME%
+
+ADD helloworld.cmd helloworld.cmd
+CMD ["helloworld.cmd"]
